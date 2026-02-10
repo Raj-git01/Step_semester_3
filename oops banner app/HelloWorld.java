@@ -1,11 +1,11 @@
-class Banner{
+class banner{
     void show()
     {
         System.out.println("Welcome");
     }
     public static void main (String[] args)
     {
-        Banner banner1 = new Banner();
+        banner banner1 = new banner();
         banner1.show();
     }
 }
