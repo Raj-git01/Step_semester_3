@@ -1,21 +1,43 @@
-# Step_semester_3 — develop
+# Session 2 — Strings
 
-Base project skeleton for STEP Semester 3.
-
-This branch holds **only the empty Java project structure**. No solved problems and no
-topic packages live here. Every session branch (`feature/session_n`) is created from this
-branch, and feature branches are never merged back into `develop`.
+**Branch:** `feature/session_2` · **Topic package:** `string`
 
 ## Structure
 
 ```
-src/
-  main/
-    java/          <- empty source root, topic packages are added on feature branches
-    resources/
+src/main/java/string/
+  class_problems/         <- solved during the live session
+  assigment_problems/     <- take-home assignment
 ```
 
-## How to open
+## Class Problems (Day 2 Live-Coding Session)
 
-Import the folder as a Java project (IntelliJ IDEA / Eclipse). The source root is
-`src/main/java`.
+| # | Problem | File |
+|---|---------|------|
+| 1 | Vowel & Consonant Counter | `class_problems/VowelConsonantCounter.java` |
+| 2 | CSV Student Record Parser | `class_problems/CsvStudentRecordParser.java` |
+| 3 | File Extension Validator | `class_problems/FileExtensionValidator.java` |
+| 4 | Masked Phone Number Formatter | `class_problems/MaskedPhoneNumberFormatter.java` |
+| 5 | Bank Transaction Reference Generator & Validator | `class_problems/BankTransactionReference.java` |
+
+## Assignment Problems
+
+The Week 2 assignment sheet has not been released on Google Classroom yet. The
+`assigment_problems` package is in place and will be filled in on this same branch as soon
+as the problems are published.
+
+## Concepts covered
+
+`charAt()`, `length()`, `split()`, `lastIndexOf()`, `substring()`, `equalsIgnoreCase()`,
+`trim()`, `StringBuilder` (`append`/`insert`), `Character.isLetter()` / `isDigit()`,
+array-length validation, and multi-stage validation without regex.
+
+## How to run
+
+```bash
+javac -d out $(find src/main/java -name '*.java')
+java -cp out string.class_problems.VowelConsonantCounter
+java -cp out string.class_problems.BankTransactionReference
+```
+
+Every class has its own `main`, so each problem runs standalone.
