@@ -29,7 +29,7 @@ session branch is a self-contained snapshot of one week's work.
 | `develop` | Empty Java project skeleton | — | — | — |
 | [`feature/session_1`](https://github.com/Raj-git01/Step_semester_3/tree/feature/session_1) | Week 1 — Java fundamentals | `java_basics` | 5 | 5 |
 | [`feature/session_2`](https://github.com/Raj-git01/Step_semester_3/tree/feature/session_2) | Week 2 — Strings | `string` | 5 | 5 |
-| [`feature/session_3`](https://github.com/Raj-git01/Step_semester_3/tree/feature/session_3) | Week 3 — OOP (+ control flow, currently deleted) | `oop` | 5 | 5 |
+| [`feature/session_3`](https://github.com/Raj-git01/Step_semester_3/tree/feature/session_3) | Week 3 — OOP  | `oop` | 5 | 5 |
 | [`feature/session_4`](https://github.com/Raj-git01/Step_semester_3/tree/feature/session_4) | Week 4 — Functions & arrays | `array` | 5 | 5 |
 
 **40 Java files currently on the branch tips** (50 solved — the 15 `control_flow` files are
