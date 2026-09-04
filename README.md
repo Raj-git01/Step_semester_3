@@ -29,12 +29,11 @@ session branch is a self-contained snapshot of one week's work.
 | `develop` | Empty Java project skeleton | — | — | — |
 | [`feature/session_1`](https://github.com/Raj-git01/Step_semester_3/tree/feature/session_1) | Week 1 — Java fundamentals | `java_basics` | 5 | 5 |
 | [`feature/session_2`](https://github.com/Raj-git01/Step_semester_3/tree/feature/session_2) | Week 2 — Strings | `string` | 5 | 5 |
-| [`feature/session_3`](https://github.com/Raj-git01/Step_semester_3/tree/feature/session_3) | Week 3 — OOP  | `oop` | 5 | 5 |
+| [`feature/session_3`](https://github.com/Raj-git01/Step_semester_3/tree/feature/session_3) | Week 3 — OOP (classes & objects) | `oop` | 5 | 5 |
 | [`feature/session_4`](https://github.com/Raj-git01/Step_semester_3/tree/feature/session_4) | Week 4 — Functions & arrays | `array` | 5 | 5 |
 
-**40 Java files currently on the branch tips** (50 solved — the 15 `control_flow` files are
-solved but were deleted from `feature/session_3` by commit `9b4bfdd`; see Known gaps).
-Each session branch carries its own detailed README with a per-problem table.
+**40 Java files solved to date.** Each session branch carries its own detailed README with
+a per-problem table.
 
 ## Repository layout
 
@@ -85,22 +84,16 @@ recursion, two-pass frequency counting.
 `equalsIgnoreCase()`, `StringBuilder`, `Character.isLetter()` / `isDigit()`, and staged
 validation that returns the reason for failure rather than a bare boolean.
 
-### Session 3 — OOP + control flow (`oop`, `control_flow`)
+### Session 3 — OOP: classes and objects (`oop`)
 
-Week 3 shipped two separate Category C sheets, so this branch was built with two topic
-packages. **`control_flow` is not on the branch tip right now** — commit `9b4bfdd` removed
-all 15 files. They are intact in `af967e7` and restore with one command (see Known gaps).
+| Type | Problems |
+|---|---|
+| Class | Student record, hostel room state, library card defaults, course constructor, applicant counter |
+| Assignment | Book record, exam hall occupancy, employee defaults, product constructor, order counter |
 
-| Type | Problems | On tip |
-|---|---|---|
-| OOP — class | Student record, hostel room state, library card defaults, course constructor, applicant counter | yes |
-| OOP — assignment | Book record, exam hall occupancy, employee defaults, product constructor, order counter | yes |
-| Control flow — assignment | All 15 problems across Levels 1–3 (the sheet asked for any five) | **deleted** |
-
-Class definition, `new`, independent instance state, Java's default field values
-(`null` / `0` / `0.0` / `false`), constructors with `this.field = parameter`, static
-counters; `if`/`else if`/`else`, `switch` with `break` and `default`, `for` and `while`,
-`break`/`continue`, nested loops, boolean flags.
+Class definition, object creation with `new`, direct field access, independent instance
+state, Java's default field values (`null` / `0` / `0.0` / `false`), constructors with
+`this.field = parameter`, and static fields accessed through the class name.
 
 ### Session 4 — Functions & arrays (`array`)
 
@@ -119,49 +112,16 @@ counters; `if`/`else if`/`else`, `switch` with `break` and `default`, `for` and 
 
 ## Known gaps
 
-- **`control_flow` was deleted from `feature/session_3`.** Commit `9b4bfdd` ("updates") is
-  a pure 15-file, 438-line deletion with nothing added. The branch README still documents
-  all 15 problems, so the branch currently contradicts itself. Nothing is lost — restore
-  with:
-
-  ```bash
-  git checkout feature/session_3
-  git checkout af967e7 -- src/main/java/control_flow
-  git commit -m "Restore control_flow assignment problems dropped in 9b4bfdd"
-  ```
-
 - `string/assigment_problems` (session 2) and `array/class_problems` (session 4) have no
   `package` declarations, so those files sit in the default package while their siblings
   are packaged. Compiles under IntelliJ, but breaks the `java -cp out <package>.<Class>`
   command above — add the declarations to make every branch consistent.
 - `feature/session_4` is missing `src/main/resources/.gitkeep`, present on every other
   branch.
-- `feature/session_1` and `feature/session_3` have no assignment/class gaps, but session 4
-  still needs the divide-and-conquer O(n log n) alternative to Kadane's, noted as a common
-  interview follow-up.
+- Session 4 still needs the divide-and-conquer O(n log n) alternative to Kadane's, noted
+  as a common interview follow-up.
 
 ## Progress log
-
-## Date: 05-09-2026 (later)
-
-**Today's Work:**
-
-- Pushed `9b4bfdd` to `feature/session_3`. Reviewing the diff afterwards showed it is a
-  deletion-only commit: all 15 `control_flow/assigment_problems` files removed, no
-  additions. Not intended — recorded under Known gaps with the restore command.
-
-**Next Session Plan:**
-
-- Restore `control_flow` from `af967e7` and push.
-- Stop using bare `updates` / `x` as commit messages; a deletion-only commit under that
-  name is invisible in the commit list.
-
-**Issues Faced:**
-
-- The deletion is only visible from `git diff --stat`, not from the commit message or the
-  branch README, which still lists every control-flow problem.
-
----
 
 ## Date: 05-09-2026
 
@@ -234,13 +194,10 @@ counters; `if`/`else if`/`else`, `switch` with `break` and `default`, `for` and 
 
 **Today's Work:**
 
-- Week 3 covered two sheets, so `feature/session_3` carries two topic packages.
-- `oop` — 5 live-session problems (Student, HostelRoom, LibraryCard, Course, Applicant) and
+- Week 3 solved on `feature/session_3` in the `oop` topic package.
+- 5 live-session problems (Student, HostelRoom, LibraryCard, Course, Applicant) and
   5 homework problems (Book, ExamHall, Employee, Product, Order): class definitions, object
   creation, independent instance state, default field values, constructors, static counters.
-- `control_flow` — the Category C assignment asked for any five; solved all fifteen across
-  Levels 1 to 3, covering if/else ladders, switch with break and default, for and while
-  loops, break/continue, nested loops and boolean flags.
 
 **Next Session Plan:**
 
@@ -250,7 +207,8 @@ counters; `if`/`else if`/`else`, `switch` with `break` and `default`, `for` and 
 
 - Was expecting `null` and `""` to print the same way for an unset String field. Printing
   the fields straight after `new` settled it — an unset object reference really is `null`.
-- Had to re-check that `case` labels without `break` fall through into the next case.
+- Static counters had to be read through the class name rather than an instance before the
+  shared-state behaviour made sense.
 
 ---
 
