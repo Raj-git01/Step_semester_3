@@ -1,4 +1,4 @@
-# Step_semester_3 — develop
+# Step_semester_3
 
 Base project skeleton for STEP Semester 3.
 
